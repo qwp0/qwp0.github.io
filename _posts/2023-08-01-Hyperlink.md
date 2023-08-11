@@ -15,9 +15,9 @@ HyperText의 Hyper는 컴퓨터 용어로서 텍스트 등의 정보가 동일 �
 
 <script src="https://gist.github.com/qwp0/60b181f436f278ff712da9d7edc9f747.js"></script>
 
-<img src="/images/2023-08-01-Hyperlink/a태그.png" alt="a태그" style="zoom:50%;" />
+<img src="/images/2023-08-01-Hyperlink/a.png" alt="a태그" style="zoom:50%;" />
 
-<img src="/images/2023-08-01-Hyperlink/a태그 이미지-0869138.png" alt="a태그 이미지" style="zoom: 25%;" />
+<img src="/images/2023-08-01-Hyperlink/atag.png" alt="a태그 이미지" style="zoom: 25%;" />
 
 - 속성
 
