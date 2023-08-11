@@ -14,7 +14,7 @@ sidebar_main: true
 즉, 웹 브라우저에 내용을 보여주는 텍스트, 이미지, 영상 등의 위치를 표시하는 것을 의미한다.
 
 ## HTML 기본 문법
-![HTML 태그, 요소](/images/2023-07-29-HTML_start/HTML 태그, 요소.png)
+![HTML tag(/images/2023-07-29-HTML_start/HTML tag.png)
 
 - ### 요소(Element)
 
