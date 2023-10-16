@@ -1,5 +1,5 @@
 ---
-title:  "표현식과 문"
+title:  "[Deep Dive] 표현식과 문"
 categories: Js
 published : true
 typora-root-url: ../
@@ -53,4 +53,4 @@ sidebar_main: true
  ```
  할당문은 표현식이기 때문에 값처럼 변수에 할당하면 할당한 값으로 평가된다.
 
- 
+ 출처 : 이웅모, 『모던 자바스크립트 deep dive』, 위키북스
