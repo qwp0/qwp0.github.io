@@ -51,7 +51,7 @@ sidebar_main: true
 문자열은 유사 배열 객체이면서 이터러블이므로 배열과 유사하게 각 문자에 접근할 수 있다.
 > 유사 배열 객체란? 
 > 유사 배열 객체란 마치 배열처럼 인덱스로 프로퍼티 값에 접근할 수 있고 length 프로퍼티를 갖는 객체를 말한다. 문자열은 마치 배열처럼 인덱스를 통해 각 문자에 접근할 수 있으며, length 프로퍼티를 갖기 때문에 유사 배열 객체이고 for문으로 순회할 수도 있다.
-> 
+
 ```javascript
  var str = 'string';
 
@@ -62,6 +62,7 @@ sidebar_main: true
  console.log(str.length);  // 6
  console.log(str.toUpperCase());  // STRING
  ```
+
 자바스크립트의 문자열은 원시 타입이며 변경 불가능하다. 이것은 문자열이 생성된 이후에 변경될 수 없음을 의미한다.
 
 ```javascript
@@ -71,6 +72,7 @@ sidebar_main: true
  str[0] = 'S';
  console.log(str);   // stirng
  ```
+ 
 이처럼 한 번 생성된 문자열은 읽기 전용 값으로서 변경할 수 없다. 원시 값은 어떤 일이 있어도 불변한다. 따라서 예기치 못한 변경으로부터 자유롭다.
 이는 데이터의 신뢰성을 보장한다.
 
