@@ -1,7 +1,7 @@
 ---
-title:  "[Deep Dive] 원시 값과 객체의 비교"
+title: "[Deep Dive] 원시 값과 객체의 비교"
 categories: Js
-published : true
+published: true
 typora-root-url: ../
 author_profile: true
 sidebar_main: true
@@ -12,7 +12,7 @@ sidebar_main: true
 - **원시 값은 변경 불가능한 값**이다. 이에 비해 객체 타입의 값, 즉 **객체는 변경 가능한 값**이다.
 - **원시 값을 변수에 할당하면 변수에는 실제 값이 저장**된다. 반면에 **객체를 변수에 할당하면 변수에는 참조 값이 저장**된다.
 - 원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 **원시 값이 복사되어 전달**되고 이를 **값에 의한 전달(pass by value)**이라고 한다.
-이에 비해 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 **참조 값이 복사되어 전달**된다. 이를 **참조에 의한 전달이(pass by reference)**라고 한다.
+  이에 비해 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 **참조 값이 복사되어 전달**된다. 이를 **참조에 의한 전달이(pass by reference)**라고 한다.
 
 ## 원시 값
 
@@ -24,17 +24,17 @@ sidebar_main: true
 상수는 재할당이 금지된 변수를 말한다. 상수도 값을 저장하기 위해 메모리 공간이 필요하므로 변수라고 할 수 있디만 상수는 단 한 번만 할당이 허용되므로 변수 값을 변경할 수 없다. 상수와 변경 불가능한 값을 동일시하면 안된다. 상수는 재할당이 금지된 변수일 뿐이다.
 
 ```javascript
- // const 키워드를 사용해 선언한 변수는 재할당이 금지된다.(상수는 재할당이 금지된 변수일 뿐이다.)
- const o ={};
+// const 키워드를 사용해 선언한 변수는 재할당이 금지된다.(상수는 재할당이 금지된 변수일 뿐이다.)
+const o = {};
 
- // const 키워드를 사용해 선언한 변수에 할당한 원시 값(상수)은 변경할 수 없다.
- // 하지만 comst 키워드를 사용해 선언한 변수에 할당한 객체는 변경할 수 있다.
- o.a = 1;
- console.log(o);  // {a: 1}
- ```
+// const 키워드를 사용해 선언한 변수에 할당한 원시 값(상수)은 변경할 수 없다.
+// 하지만 comst 키워드를 사용해 선언한 변수에 할당한 객체는 변경할 수 있다.
+o.a = 1;
+console.log(o); // {a: 1}
+```
 
-원시 값을 할당한 변수에 새로운 원시값을 재할당하면 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고 
-재할당한 원시 값을 저장한 후 변수는 새롭게 재할당한 원시 값을 가리킨다. 
+원시 값을 할당한 변수에 새로운 원시값을 재할당하면 이전의 원시 값을 변경하는 것이 아니라 새로운 메모리 공간을 확보하고
+재할당한 원시 값을 저장한 후 변수는 새롭게 재할당한 원시 값을 가리킨다.
 
 <img src="/images/2023-10-22-Primitive_Object/ptimitive.png" alt="원시 값은 변경 불가능한 값" />
 
@@ -49,30 +49,31 @@ sidebar_main: true
 원시 값인 문자열은 다른 원시 값과 비교할 때 독특한 특징이 있다. 문자열은 0개 이상의 문자로 이루어진 집합을 말하며 1개의 문자는 2바이트의 메모리 공간에 저장된다. 따라서 문자열은 몇 개의 문자로 이뤄졌느냐에 따라 메모리 공간의 크기가 결정된다.
 
 문자열은 유사 배열 객체이면서 이터러블이므로 배열과 유사하게 각 문자에 접근할 수 있다.
-> 유사 배열 객체란? 
+
+> 유사 배열 객체란?<br/>
 > 유사 배열 객체란 마치 배열처럼 인덱스로 프로퍼티 값에 접근할 수 있고 length 프로퍼티를 갖는 객체를 말한다. 문자열은 마치 배열처럼 인덱스를 통해 각 문자에 접근할 수 있으며, length 프로퍼티를 갖기 때문에 유사 배열 객체이고 for문으로 순회할 수도 있다.
 
 ```javascript
- var str = 'string';
+var str = "string";
 
- // 문자열은 유사 배열이므로 배열과 유사하게 인덱스를 사용해 각 문자에 접근할 수 있다.
- console.log(str[0]);  // s
- 
- //원시 값인 문자열이 객체처럼 동작한다.
- console.log(str.length);  // 6
- console.log(str.toUpperCase());  // STRING
- ```
+// 문자열은 유사 배열이므로 배열과 유사하게 인덱스를 사용해 각 문자에 접근할 수 있다.
+console.log(str[0]); // s
+
+//원시 값인 문자열이 객체처럼 동작한다.
+console.log(str.length); // 6
+console.log(str.toUpperCase()); // STRING
+```
 
 자바스크립트의 문자열은 원시 타입이며 변경 불가능하다. 이것은 문자열이 생성된 이후에 변경될 수 없음을 의미한다.
 
 ```javascript
- var str = 'string';
+var str = "string";
 
- // 문자열은 원시 값이므로 변경할 수 없다. 이때 에러가 발생하지 않는다.
- str[0] = 'S';
- console.log(str);   // stirng
- ```
- 
+// 문자열은 원시 값이므로 변경할 수 없다. 이때 에러가 발생하지 않는다.
+str[0] = "S";
+console.log(str); // stirng
+```
+
 이처럼 한 번 생성된 문자열은 읽기 전용 값으로서 변경할 수 없다. 원시 값은 어떤 일이 있어도 불변한다. 따라서 예기치 못한 변경으로부터 자유롭다.
 이는 데이터의 신뢰성을 보장한다.
 
@@ -82,30 +83,30 @@ sidebar_main: true
 이를 **값에 의한 전달** 이라고 한다.
 
 ```javascript
- var score = 80;
+var score = 80;
 
 // copy 변수에는 score 변수의 값 80이 복사되어 할당된다.
- var copy = score;
+var copy = score;
 
- console.log(score , copy);   // 80 80
- console.log(score === copy); // true
- ```
+console.log(score, copy); // 80 80
+console.log(score === copy); // true
+```
 
 이 때 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다. score 변수의 값을 변경해 보자
 
 ```javascript
- var score = 80;
- var copy = score;
+var score = 80;
+var copy = score;
 
- console.log(score , copy);   // 80 80
- console.log(score === copy); // true
+console.log(score, copy); // 80 80
+console.log(score === copy); // true
 
- // score 변수와 copy 변수의 값은 다른 메모리 공간에 저장된 별개의 값이다.
- // score 변수의 값을 변경해도 copy 변수의 값에는 어떠한 영향도 주지 않는다.
- score = 100;
+// score 변수와 copy 변수의 값은 다른 메모리 공간에 저장된 별개의 값이다.
+// score 변수의 값을 변경해도 copy 변수의 값에는 어떠한 영향도 주지 않는다.
+score = 100;
 
- console.log(score , copy);  // 100 80
- ```
+console.log(score, copy); // 100 80
+```
 
 <img src="/images/2023-10-22-Primitive_Object/primitive2.png" alt="값에 의한 전달 동작 과정" />
 
@@ -130,38 +131,38 @@ sidebar_main: true
 
 ```javascript
 var person = {
-  name: 'Lee'
+  name: "Lee",
 };
 
 //프로퍼티 값 갱신
-person.name = 'Kim';
+person.name = "Kim";
 
 //프로퍼티 동적 생성
-person.addres = 'Seoul';
+person.addres = "Seoul";
 
-console.log(person);  // {name: "Kim" , address: "Seoul"}
- ```
+console.log(person); // {name: "Kim" , address: "Seoul"}
+```
+
 객체는 변경 가능한 값으로 메모리에 저장된 객체를 직접 수정할 수 있으며 이 때 재할당하지 않았으므로 객체를 할당한 변수의 참조 값은 변경되지 않는다.
 
 <img src="/images/2023-10-22-Primitive_Object/reference2.png" alt="객체는 변경 가능한 값" />
 
 객체는 원시 값과는 다르게 여러 개의 식별자가 하나의 객체를 공유할 수 있다는 구조적 단점에 따른 부작용이 있다.
 
-> 얕은 복사(shallow copy)와 깊은 복사(deep copy)
+> 얕은 복사(shallow copy)와 깊은 복사(deep copy)<br/>
 > 객체를 프로퍼티 값으로 갖는 객체의 경우 얕은 복사는 한 단계까지만 복사하는 것을 말하고 깊은 복사는 객체에 중첩되어 있는 객체까지 모두 복사하는 것을 말한다.
 > 원시 값을 할당한 변수를 다른 변수에 할당하는 것을 깊은 복사, 객체를 할당한 변수를 다른 변수에 할당하는 것을 얕은 복사라고 부르는 경우도 있다.
-
 
 ### 참조에 의한 전달
 
 ```javascript
- var person = {
-  name: 'Lee'
- };
+var person = {
+  name: "Lee",
+};
 
- // 참조 값을 복사(얕은 복사)
- var copy = person;
- ```
+// 참조 값을 복사(얕은 복사)
+var copy = person;
+```
 
 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라고 한다.
 
@@ -171,43 +172,42 @@ console.log(person);  // {name: "Kim" , address: "Seoul"}
 원본과 사본 중 어느 한 쪽에서 객체를 변경하면 서로 영향을 주고 받는다.
 
 ```javascript
- var person = {
-  name: 'Lee'
- };
+var person = {
+  name: "Lee",
+};
 
- // 참조 값을 복사(얕은 복사)
- var copy = person;
+// 참조 값을 복사(얕은 복사)
+var copy = person;
 
- // copy와 person은 동일한 객체를 참조한다.
- console.log(copy === person); // true
+// copy와 person은 동일한 객체를 참조한다.
+console.log(copy === person); // true
 
- // copy를 통해 객체 변경
- copy.name= 'Kim';
+// copy를 통해 객체 변경
+copy.name = "Kim";
 
- // person을 통해 객체 변경
- person.address = 'Seoul';
+// person을 통해 객체 변경
+person.address = "Seoul";
 
- // copy와 person은 동일한 객체를 가리키기 때문에 서로 영향을 주고 받는다.
- console.log(person);   // {name: "Kim" , address: "Seoul"}
- console.log(copy);     // {name: "Kim" , address: "Seoul"}
- ```
+// copy와 person은 동일한 객체를 가리키기 때문에 서로 영향을 주고 받는다.
+console.log(person); // {name: "Kim" , address: "Seoul"}
+console.log(copy); // {name: "Kim" , address: "Seoul"}
+```
 
 ```javascript
- var person1 = {
-  name: "Lee"
- };
- var person2 = {
-  name: "Lee"
- };
+var person1 = {
+  name: "Lee",
+};
+var person2 = {
+  name: "Lee",
+};
 
- console.log(person1 === person2);           // false
- console.log(person1.name === person2.name); // true
- ```
+console.log(person1 === person2); // false
+console.log(person1.name === person2.name); // true
+```
 
 객체를 할당한 변수는 참조 값을 가지고 있기 때문에 === 일치 비교 연산자를 통해 객체를 할당한 변수를 비교하면 참조 값을 비교한다.
 객체 리터럴은 평가될 때마다 객체를 생성해서 person1 변수와 person2 변수가 가리키는 객체는 내용은 같지만 다른 메모리에 저장된 별개의 객체이다.
 
 하지만 프로퍼티 값을 참조하는 person1.name과 person2.name은 값으로 평가될 수 있는 표현식이다. 모두 원시값 'Lee'로 평가되므로 같다.
-
 
 출처 : 이웅모, 『모던 자바스크립트 deep dive』, 위키북스
